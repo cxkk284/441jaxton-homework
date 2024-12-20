@@ -1,0 +1,661 @@
+/*    添加你的名字  */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #ffffff; /* 你可以根据需要调整背景色 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.header h1 {
+  margin: 0;
+  flex: 1;
+  text-align: center;
+}
+
+.left-image {
+  height: 50px; /* 根据需要调整高度 */
+}
+
+.topnav {
+  background-color: #988f8f; /* 浅灰色背景 */
+  text-align: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.topnav a {
+  margin: 0 15px; /* 调整链接之间的间距 */
+  text-decoration: none;
+  color: #333333; /* 文本颜色 */
+  font-weight: bold;
+}
+
+.topnav a:hover {
+  color: #007BFF; /* 鼠标悬停时的颜色 */
+}
+
+/* 确保内容区域有足够的空间，避免与header和footer重叠 */
+.content {
+  padding: 20px;
+  margin-top: 60px; /* 根据header的高度调整 */
+  margin-bottom: 60px; /* 根据footer的高度调整 */
+}
+
+/* Additional class for hiding elements */  
+.hidden {  
+    display: none;  
+}   
+
+.hero-banner {  
+    /* Add style to Hero banner */  
+    width: 200px; /* Can be adjusted according to demand */  
+    height: 200px; /* Adjust based on image size and page layout */  
+    background-image: url('1.jpg'); /* If the image loading fails, a background image can be used as an alternative */  
+    background-size: cover; /* Ensure that the image covers the entire container*/  
+    background-position: center; /* Center Image  */  
+    text-align: center; /* If you need to add text above to center it */  
+    position: relative; /* If you need to add an overlay or text on top of it */  
+}  
+
+/* If using<img>tags, this style may be necessary to ensure that the image is displayed correctly */  
+.hero-banner img {  
+    width: 200px; /* Make the image width the same as the container width */  
+    height: auto; /* Maintain the scale of the image */  
+}  
+/* Set styles for containers and list items */  
+
+  footer {  
+    background-color: #000000; /* 浅灰色背景 */  
+    text-align: center; /* 使内容居中（但在这个案例中，我们已经在.footer-content中设置了） */  
+    padding: 10px 0; /* 页脚上下内边距 */  
+    font-family: Arial, sans-serif; /* 设置字体 */  
+    color: #ffffff; /* 文本颜色 */  
+}  
+  
+.footer-content p {  
+    margin: 0;  
+}
+
+.create-page {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题样式 */
+.create-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 表单组样式 */
+.create-page-form {
+  margin-bottom: 20px;
+}
+
+.create-page-group {
+  margin-bottom: 15px;
+}
+
+/* 标签和输入框样式 */
+.create-page-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.create-page-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* 按钮样式 */
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-right: 10px; /* 为注销按钮添加右边距 */
+}
+
+/* 创建用户按钮样式 */
+button[onclick="createUser()"] {
+  background-color: #4CAF50; /* 绿色背景 */
+  color: white; /* 白色文本 */
+}
+
+/* 注销按钮样式 */
+#logoutButton {
+  background-color: #f44336; /* 红色背景 */
+  color: white; /* 白色文本 */
+}
+
+/* 按钮悬停样式 */
+button:hover {
+  opacity: 0.9; /* 悬停时降低不透明度 */
+}
+
+
+/* 登录页面容器样式 */
+.login-page-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题样式 */
+.login-page-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 表单样式 */
+.login-page-form {
+  margin-bottom: 20px;
+}
+
+.login-page-group {
+  margin-bottom: 15px;
+}
+
+/* 标签和输入框样式 */
+.login-page-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.login-page-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* 按钮样式 */
+button {
+  display: block;
+  width: 150px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: #007BFF; /* 蓝色背景 */
+  color: white; /* 白色文本 */
+}
+
+/* 按钮悬停样式 */
+button:hover {
+  background-color: #0056b3; /* 更深的蓝色背景 */
+}
+
+#shoppingPage {
+  display: block; /* 显示购物车页面 */
+  padding: 20px;
+}
+
+.shopping-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 英雄横幅图片样式 */
+.hero-banner {
+  height: 200px;
+  background-color: #333; /* 占位符背景色，应替换为实际图片 */
+  margin-bottom: 20px;
+}
+
+/* 居中对齐的标题样式 */
+.centered-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 容器样式 */
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* 产品列表样式 */
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product {
+  background-color: #fafafa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.product h2, .product h3 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.price {
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #d9534f; /* 红色价格 */
+}
+
+.quantity {
+  width: 50px;
+  padding: 5px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+/* 按钮样式 */
+.add-to-cart, .remove, #purchase-button, #clear-cart-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart {
+  background-color: #5cb85c; /* 绿色添加按钮 */
+  color: #fff;
+  width: 150px;
+}
+
+.add-to-cart:hover {
+  background-color: #4cae4c; /* 更深的绿色 */
+}
+
+.remove {
+  background-color: #d9534f; /* 红色删除按钮，初始隐藏 */
+  color: #fff;
+  display: none; /* 仍然隐藏，将通过JavaScript显示 */
+}
+
+.remove:hover {
+  background-color: #c9302c; /* 更深的红色 */
+}
+
+#purchase-button {
+  background-color: #337ab7; /* 蓝色结账按钮 */
+  color: #fff;
+  margin-top: 20px;
+  width: 150px;
+}
+
+#purchase-button:hover {
+  background-color: #286090; /* 更深的蓝色 */
+  width: 150px;
+}
+
+#clear-cart-button {
+  background-color: #d9534f; /* 红色清空购物车按钮 */
+  color: #fff;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+#clear-cart-button:hover {
+  background-color: #c9302c; /* 更深的红色 */
+}
+
+/* 购物车摘要样式 */
+.cart-summary {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+#product-totals, #total-price {
+  font-weight: bold;
+  color: #333;
+}
+
+.aus-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid #000; /* 新增的边框样式 */
+}
+
+/* 头部样式 */
+.aus-header {
+  background: #4CAF50;
+  color: #fff;
+  padding-top: 30px;
+  min-height: 70px;
+  border-bottom: #79c76a 3px solid;
+}
+
+.aus-header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin: 0;
+}
+
+/* 主内容区域样式 */
+.aus-home-content {
+  padding: 20px;
+  background: #fff;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 信息部分样式 */
+.aus-info {
+  text-align: center;
+}
+
+.aus-info h2 {
+  color: #4CAF50;
+}
+
+.aus-info p {
+  font-size: 16px;
+}
+
+.aus-info a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.aus-info a:hover {
+  text-decoration: underline;
+}
+
+/* 课程部分样式 */
+.aus-courses {
+  margin-top: 40px;
+}
+
+.aus-courses h3 {
+  color: #4CAF50;
+  text-align: center;
+}
+
+.aus-courses ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.aus-courses li {
+  background: #f9f9f9;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.aus-courses li:hover {
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.aus-courses h2 {
+  color: #4CAF50;
+  font-size: 18px;
+}
+
+.aus-courses h3 {
+  margin: 10px 0 5px;
+  font-size: 16px;
+}
+
+.aus-courses p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* 培训资源包部分样式 */
+.aus-training-kits {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.aus-training-kits h3 {
+  color: #4CAF50;
+}
+
+.aus-training-kits p {
+  font-size: 16px;
+  color: #666;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #007BFF;
+}
+
+.about-text {
+  margin-bottom: 40px;
+}
+
+.courses-title, .values-title, .contact-title {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.75em;
+  color: #fb5d02;
+}
+
+.courses-list, .values-list {
+  list-style: none;
+  padding: 0;
+  color: #f9b304;
+}
+
+.courses-list li, .values-list li {
+  background: url('bullet.png') no-repeat left center; /* Optional: use a custom bullet icon */
+  padding-left: 25px;
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.contact-section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #ddd;
+}
+
+.contact-email {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-title {
+      font-size: 2em;
+  }
+
+  .courses-title, .values-title, .contact-title {
+      font-size: 1.5em;
+  }
+
+  .courses-list li, .values-list li {
+      font-size: 1em;
+  }
+}
+
+.my-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.my-content-section {
+  margin-bottom: 40px;
+}
+
+.my-service-commitment h2,
+.my-contact-details h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.my-service-commitment p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.my-service-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.my-contact-details {
+  display: flex;
+  flex-wrap: wrap; /* 允许子元素换行 */
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.my-info-block {
+  flex: 1 1 calc(50% - 20px); /* 使用calc计算宽度，减去gap */
+}
+
+@media (max-width: 768px) {
+  .my-info-block {
+      flex: 1 1 100%; /* 在小屏幕上占满整行 */
+  }
+}
+
+.my-about-ausinfotech h3,
+.my-contact-info h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.my-about-ausinfotech ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.my-about-ausinfotech ul li {
+  background: url('bullet.png') no-repeat left center; /* 可选：使用自定义的子弹图标 */
+  padding-left: 20px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.my-contact-info p,
+.my-contact-info form {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.my-contact-info form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.my-contact-info form input,
+.my-contact-info form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.my-contact-info form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.my-contact-info form button:hover {
+  background-color: #45a049;
+}
